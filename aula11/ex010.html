@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Javascript</title>
+    
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do Carro: <input type="number" name="txtvelocidade" id="txtvelocidade">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">Resultado</div>
+
+    <script>
+        function verificar(){
+            var txtvel = window.document.getElementById('txtvelocidade');
+            var vel = Number(txtvel.value);
+
+            var res = window.document.getElementById('res');
+
+            res.innerHTML = `<p>A velocidade do seu carro é de ${vel}</p>`
+
+            if(vel > 60){ //Condição Simples
+                res.innerHTML +=  `<p>Você ultrapassou a velocidade permitida. Multado!</p>`
+            }else{
+                res.innerHTML += `<p>Dirija usando centro de segurança!</p>`
+            }            
+        }
+
+    </script>
+</body>
+</html>
